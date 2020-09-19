@@ -42,10 +42,18 @@ Can only take the mean for numerical and logical variables, and not characters a
 
 *Convert non-numeric variables to numeric variables:*
 
-```{r, numeric_conversion, eval = FALSE}
+```{r numeric_conversion, eval = FALSE}
 as.numeric(pull(prob1_df, samp_gt_0))
 as.numeric(pull(prob1_df, char_vec))
 as.numeric(pull(prob1_df, factor_vec))
 ```
 The logical variable gets converted to 0s and 1s. Characters can't be converted to numbers, and factors get converted to 1s, 2s, and 3s. We can calculate the mean for logical and factor variables. 
+
+*Calculate products of variables:*
+
+```{r Products}
+as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, sample)
+as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, sample)
+as.numeric(factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, sample)
+```
 
