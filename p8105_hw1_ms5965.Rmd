@@ -77,3 +77,14 @@ summary(penguins)
 *   Size: 344 observations (344 x 8)
 *   Mean flipper length: 200.9mm
 
+*Creating a scatterplot:*
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
+*Saving the scatterplot as a pdf:*
+
+```{r}
+ggsave("scatter_plot.pdf", height = 4, width = 6)
+```
+
