@@ -1,19 +1,21 @@
 ---
-title: "p8105 HW 1"
+title: "Homework 1"
 author: "Mehr Shafiq"
 output: github_document
 ---
 
-**Problem 1**
+## Problem 1
 
-```{r setup, include = FALSE}
+*Setting up:*
+
+```{r setup}
 library(tidyverse)
 ```
-*Creating a data frame:*
 
-```{r Data Frame}
-prob1_df = 
-  tibble(
+*Create a data frame with the specified elements:*
+
+```{r Data_frame}
+prob1_df = tibble(
     sample = rnorm(10),
     samp_gt_0 = sample > 0,
     char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
@@ -21,3 +23,19 @@ prob1_df =
   ) 
 ```
 
+*Take the mean of each variable in my data frame:*
+
+```{r mean_pull_var, eval = FALSE}
+mean(pull(prob1_df, sample))
+mean(pull(prob1_df, samp_gt_0))
+mean(pull(prob1_df, char_vec))
+mean(pull(prob1_df, factor_vec))
+```
+Means:
+
+*   Sample: 0.4596784
+*   Sample > 0: 0.7
+*   Character vector: NA
+*   Factor Vector: NA
+
+Can only take the mean for numerical and logical variables, and not characters and factors. 
