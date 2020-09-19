@@ -4,4 +4,20 @@ author: "Mehr Shafiq"
 output: github_document
 ---
 
+**Problem 1**
+
+```{r setup, include = FALSE}
+library(tidyverse)
+```
+*Creating a data frame:*
+
+```{r Data Frame}
+prob1_df = 
+  tibble(
+    sample = rnorm(10),
+    samp_gt_0 = sample > 0,
+    char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+    factor_vec = factor(c("low", "low", "low", "mod", "mod", "mod", "mod", "high", "high", "high"))
+  ) 
+```
 
