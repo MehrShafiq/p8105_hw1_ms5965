@@ -59,6 +59,8 @@ as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, sample)
 as.numeric(factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, sample)
 ```
 
+The product operation does not work with factor vectors. 
+
 ## Problem 2
 
 *Load the penguins dataset:*
@@ -74,12 +76,12 @@ data("penguins", package = "palmerpenguins")
 
 *Creating a scatterplot:*
 
-```{r}
+```{r create_scatterplot}
 ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 ```
 *Saving the scatterplot as a pdf:*
 
-```{r}
+```{r save_scatterplot}
 ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
 
