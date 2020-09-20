@@ -55,7 +55,7 @@ The logical variable gets converted to 0s and 1s. Characters can't be converted 
 
 ```{r Products}
 as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, sample)
-factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, sample)
+as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, sample)
 as.numeric(factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, sample)
 ```
 
@@ -68,14 +68,9 @@ data("penguins", package = "palmerpenguins")
 ```
 *Summary of the dataset:*
 
-```{r dataset descriptives, eval = FALSE}
-nrow(penguins)
-ncol(penguins)
-summary(penguins)
-```
-*   Variables: species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year
-*   Size: 344 observations (344 x 8)
-*   Mean flipper length: 200.9mm
+*   Variables in this dataset include: `r names(penguins)`.
+*   The dataset has `r nrow(penguins)` observations (rows) and `r ncol(penguins)` variables (columns).
+*   The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`.
 
 *Creating a scatterplot:*
 
